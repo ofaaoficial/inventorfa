@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\User;
+use App\Product;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +23,12 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
+
+        Product::create([
+            'name' => 'Product test',
+            'quantity' => '1',
+            'description' => 'description product test',
+        ]);
 
     }
 }
