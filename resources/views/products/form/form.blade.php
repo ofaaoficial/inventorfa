@@ -13,3 +13,12 @@
     <label for="description">Description</label>
     <textarea name="description" id="description" cols="30" rows="10" class="form-control" required>@isset($product->description) {{$product->description}} @endisset</textarea>
 </div>
+
+<div class="form-group">
+    <label for="type">Type</label>
+    <select name="type" id="type" class="form-control" required>
+        <option value="unidad">Unidad</option>
+        <option value="paquete">Paquete</option>
+    </select>
+</div>
+

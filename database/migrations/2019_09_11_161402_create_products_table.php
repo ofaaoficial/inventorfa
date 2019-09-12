@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string("name");
             $table->integer("quantity")->default(0);
             $table->string("description");
+            $table->enum('type', ['paquete', 'unidad'])->default('unidad');
 
             $table->timestamps();
         });

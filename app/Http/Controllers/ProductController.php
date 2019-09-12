@@ -42,7 +42,7 @@ class ProductController extends Controller
             'quantity' => 'required|min:1',
         ]);
 
-        if($v->fails()) return back()->with($v->errors());
+        if($v->fails()) return back()->withErrors($v->errors());
 
 
         Product::create($request->all());
