@@ -27,6 +27,37 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
+const BASE_PATH = 'http://localhost/inventorfa/public/';
+
+import axios from 'axios';
+
 const app = new Vue({
     el: '#app',
+    methods: {
+        addProduct(id){
+            let span = event.target.parentNode.childNodes[2];
+            if(confirm('Seguro que desea aumentar')) {
+                console.log(id);
+                axios.post(`${BASE_PATH}addProduct/${id}`)
+                    .then(r => {
+                        if(r.status == 200) span.innerText = parseInt(span.innerText) + 1;
+                    });
+            }
+        },
+        deductProduct(id){
+            let span = event.target.parentNode.childNodes[2];
+            if(confirm('Seguro que desea reducir')){
+                axios.post(`${BASE_PATH}deductProduct/${id}`)
+                    .then(r => {
+                        if(r.status == 200) if(span.innerText > 0) span.innerText = parseInt(span.innerText) - 1;
+                    });
+            }
+        },
+        registerProduct(){
+            if(confirm('Seguro que desea hacer este registro')){
+                document.querySelector('#register-product').submit();
+            }
+        }
+    }
 });

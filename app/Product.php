@@ -11,4 +11,18 @@ class Product extends Model
         'quantity',
         'description'
     ];
+
+    public function addProduct(){
+        $this->quantity++;
+        return $this->save();
+    }
+
+    public function deductProduct(){
+        if($this->quantity > 0) {
+            $this->quantity--;
+            return $this->save();
+        }
+
+        return false;
+    }
 }

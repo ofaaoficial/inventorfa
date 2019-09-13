@@ -49328,9 +49328,13 @@ module.exports = function(module) {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -49356,8 +49360,36 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+var BASE_PATH = 'http://localhost/inventorfa/public/';
+
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  methods: {
+    addProduct: function addProduct(id) {
+      var span = event.target.parentNode.childNodes[2];
+
+      if (confirm('Seguro que desea aumentar')) {
+        console.log(id);
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(BASE_PATH, "addProduct/").concat(id)).then(function (r) {
+          if (r.status == 200) span.innerText = parseInt(span.innerText) + 1;
+        });
+      }
+    },
+    deductProduct: function deductProduct(id) {
+      var span = event.target.parentNode.childNodes[2];
+
+      if (confirm('Seguro que desea reducir')) {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(BASE_PATH, "deductProduct/").concat(id)).then(function (r) {
+          if (r.status == 200) if (span.innerText > 0) span.innerText = parseInt(span.innerText) - 1;
+        });
+      }
+    },
+    registerProduct: function registerProduct() {
+      if (confirm('Seguro que desea hacer este registro')) {
+        document.querySelector('#register-product').submit();
+      }
+    }
+  }
 });
 
 /***/ }),

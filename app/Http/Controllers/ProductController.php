@@ -71,7 +71,19 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update($request->all());
-        return redirect('products')->with('msg', 'Editado correctamente');
+        return redirect('products')->with('msg', 'Editado correctamente', 200);
+    }
+
+    public function addProduct($id){
+        $product = Product::find($id);
+        $product->addProduct();
+        return response()->json(['message' => 'Actualizado correctamente'], 200);
+    }
+
+    public function deductProduct($id){
+        $product = Product::find($id);
+        $product->deductProduct();
+        return response()->json(['message' => 'Actualizado correctamente']);
     }
 
 }

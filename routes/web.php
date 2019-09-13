@@ -12,11 +12,23 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function(){
+    return redirect('products');
+})->name('home');
 
-Route::resource('products', 'ProductController')->except('show');
+Route::middleware(['auth'])->group(function(){
+    Route::resource('products', 'ProductController')->except('show');
+    Route::post('deductProduct/{id}', 'ProductController@deductProduct')->name('deduct');
+
+    Route::get('users', 'UserController@index')->name('users.index');
+
+    Route::middleware('isAdmin')->group(function(){
+        Route::post('addProduct/{id}', 'ProductController@addProduct')->name('add');
+    });
+});
+

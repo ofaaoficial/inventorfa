@@ -13,10 +13,10 @@
                             <h1>Crear producto</h1>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('products.store')}}" method="POST">
+                            <form action="{{route('products.store')}}" method="POST" id="register-product">
                                 @include('products.form.form')
                                 <div class="form-group">
-                                    <button class="btn btn-success">Register</button>
+                                    <button class="btn btn-success" @click.prevent="registerProduct">Register</button>
                                 </div>
                             </form>
                         </div>

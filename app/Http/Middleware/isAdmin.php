@@ -17,6 +17,6 @@ class isAdmin
     {
         if(Auth()->user() && Auth()->user()->role == 'admin') return $next($request);
 
-        return redirect('/products');
+        return response()->json(['message' => 'No tiene permisos para esta accion.'], 400);
     }
 }
