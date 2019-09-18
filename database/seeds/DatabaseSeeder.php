@@ -14,15 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        User::create([
-            'name' => 'David',
-            'email' => 'davidstevenreyes@hotmail.com',
-            'document' => '1031178189',
-            'phone_number' => '3195768307',
-            'password' => bcrypt('DavidReyes'),
-            'role' => 'admin',
-        ]);
-
 
         Product::create([
             'name' => 'Product test',
@@ -30,5 +21,22 @@ class DatabaseSeeder extends Seeder
             'description' => 'description product test',
         ]);
 
+        User::create([
+            'name' => 'David',
+            'email' => 'davidstevenreyes@hotmail.com',
+            'document' => '1031178189',
+            'phone_number' => '3195768307',
+            'password' => bcrypt('davidreyes'),
+            'role' => 'admin',
+        ]);
+
+        User::create([
+            'name' => 'Oscar Amado',
+            'email' => 'oscarfamado@gmail.com',
+            'document' => '1022445546',
+            'phone_number' => '3017311931',
+            'password' => bcrypt('oscar123'),
+            'role' => 'admin',
+        ]);
     }
 }
