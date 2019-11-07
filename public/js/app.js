@@ -49360,10 +49360,21 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var BASE_PATH = 'http://localhost/inventorfa/public/';
+var BASE_PATH = "".concat(window.location.protocol, "//").concat(window.location.host);
+
+if (window.location.port) {
+  BASE_PATH += ":".concat(window.location.port, "/");
+} else BASE_PATH += "/inventorfa/public/";
+
+console.log(BASE_PATH);
 
 var app = new Vue({
   el: '#app',
+  data: function data() {
+    return {
+      date: document.write(new Date().getFullYear())
+    };
+  },
   methods: {
     addProduct: function addProduct(id) {
       var span = event.target.parentNode.childNodes[2];

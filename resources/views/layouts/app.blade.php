@@ -121,10 +121,7 @@
                     </ul>
                 </nav>
                 <div class="copyright float-right">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>
+                    &copy;@{{   date}}
                     <a href="https://www.github.com/ofaaoficial" target="_blank">ofaaoficial</a>.
                 </div>
             </div>

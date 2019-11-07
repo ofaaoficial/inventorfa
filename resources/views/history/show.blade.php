@@ -13,6 +13,7 @@
                     <tr>
                         <th>Quantity</th>
                         <th>Name</th>
+                        <th>Date</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -21,6 +22,7 @@
                         <tr>
                             <td>{{$h->quantity}}</td>
                             <td>{{$h->user->name}}</td>
+                            <td>{{$h->created_at}}</td>
                         </tr>
                     @endforeach
                     </tbody>

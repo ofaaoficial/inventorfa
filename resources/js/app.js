@@ -28,12 +28,23 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  */
 
 
-const BASE_PATH = 'http://localhost/inventorfa/public/';
+let BASE_PATH = `${window.location.protocol}//${window.location.host}`;
+if(window.location.port){
+    BASE_PATH += `:${window.location.port}/`
+}else BASE_PATH += `/inventorfa/public/`;
+
+console.log(BASE_PATH);
+
 
 import axios from 'axios';
 
 const app = new Vue({
     el: '#app',
+    data(){
+        return {
+            date: document.write(new Date().getFullYear())
+        }
+    },
     methods: {
         addProduct(id){
             let span = event.target.parentNode.childNodes[2];
