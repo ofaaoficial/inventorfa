@@ -13,7 +13,8 @@ class Product extends Model
         'description'
     ];
 
-    public function history($type_quantity){
+    public function history($type_quantity)
+    {
         History::create([
             'quantity' => $type_quantity,
             'product_id' => $this->id,
@@ -23,14 +24,16 @@ class Product extends Model
         return true;
     }
 
-    public function addProduct(){
+    public function addProduct()
+    {
         $this->quantity++;
         $this->history('+1');
         return $this->save();
     }
 
-    public function deductProduct(){
-        if($this->quantity > 0) {
+    public function deductProduct()
+    {
+        if ($this->quantity > 0) {
             $this->quantity--;
             $this->history('-1');
             return $this->save();
@@ -39,7 +42,8 @@ class Product extends Model
         return false;
     }
 
-    public function histories(){
+    public function histories()
+    {
         return $this->hasMany(History::class);
     }
 }

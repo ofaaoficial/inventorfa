@@ -15,7 +15,9 @@ class isAdmin
      */
     public function handle($request, Closure $next)
     {
-        if(Auth()->user() && Auth()->user()->role == 'admin') return $next($request);
+        if (Auth()->user() && Auth()->user()->role == 'admin') {
+            return $next($request);
+        }
 
         return response()->json(['message' => 'No tiene permisos para esta accion.'], 400);
     }

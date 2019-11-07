@@ -43,7 +43,9 @@ class ProductController extends Controller
             'quantity' => 'required|min:1',
         ]);
 
-        if($v->fails()) return back()->withErrors($v->errors());
+        if ($v->fails()) {
+            return back()->withErrors($v->errors());
+        }
 
 
         Product::create($request->all());
@@ -75,17 +77,17 @@ class ProductController extends Controller
         return redirect('products')->with('msg', 'Editado correctamente', 200);
     }
 
-    public function addProduct($id){
+    public function addProduct($id)
+    {
         $product = Product::find($id);
         $product->addProduct();
         return response()->json(['message' => 'Actualizado correctamente'], 200);
     }
 
-    public function deductProduct($id){
-
+    public function deductProduct($id)
+    {
         $product = Product::find($id);
         $product->deductProduct();
         return response()->json(['message' => 'Actualizado correctamente']);
     }
-
 }
