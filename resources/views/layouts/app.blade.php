@@ -40,7 +40,7 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="{{route('history.index')}}">
                             <i class="material-icons">history</i>
-                            <p>History products</p>
+                            <p>History</p>
                         </a>
                     </li>
                     <li class="nav-item ">

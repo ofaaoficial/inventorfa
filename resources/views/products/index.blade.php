@@ -45,8 +45,11 @@
                             </td>
                             <td>{{$product->description}}</td>
                             <td>
-                                <a href="{{route('products.edit', $product->id)}}">
+                            <a href="{{route('products.edit', $product->id)}}">
                                     <button class="btn btn-small btn-outline-success">Editar</button>
+                                </a>
+                                <a href="{{route('history.show', $product->id)}}">
+                                    <button class="btn btn-small btn-outline-primary">Historial</button>
                                 </a>
                             </td>
                         </tr>

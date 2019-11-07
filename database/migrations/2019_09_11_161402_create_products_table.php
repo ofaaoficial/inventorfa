@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string("name");
             $table->integer("quantity")->default(0);
-            $table->string("description");
+            $table->string("description")->nullable();
             $table->enum('type', ['paquete', 'unidad'])->default('unidad');
 
             $table->timestamps();

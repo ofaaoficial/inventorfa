@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\History;
 use Illuminate\Http\Request;
+use App\Product;
 class HistoryController extends Controller
 {
     /**
@@ -44,9 +45,10 @@ class HistoryController extends Controller
      * @param  \App\History  $history
      * @return \Illuminate\Http\Response
      */
-    public function show(History $history)
+    public function show($id)
     {
-        //
+        $product = Product::find($id);
+        return view('history.show', compact('product'));
     }
 
     /**

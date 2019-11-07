@@ -38,4 +38,8 @@ class Product extends Model
 
         return false;
     }
+
+    public function histories(){
+        return $this->hasMany(History::class);
+    }
 }
