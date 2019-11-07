@@ -16,12 +16,18 @@ class CreateHistoriesTable extends Migration
         Schema::create('histories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('quantity');
+            $table->unsignedBigInteger('product_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onUpdate('cascade');
+
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
                 ->onUpdate('cascade');
         });
     }

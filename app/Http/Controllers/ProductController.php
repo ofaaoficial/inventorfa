@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\History;
 use App\Product;
 use Illuminate\Http\Request;
 use Validator;
@@ -81,6 +82,7 @@ class ProductController extends Controller
     }
 
     public function deductProduct($id){
+
         $product = Product::find($id);
         $product->deductProduct();
         return response()->json(['message' => 'Actualizado correctamente']);
