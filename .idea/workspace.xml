@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="531837dc-31d4-490b-a0d5-8f20a2c28efb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/History.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/History.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HistoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HistoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_09_11_164209_create_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_09_11_164209_create_histories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +185,7 @@
       <workItem from="1568662434289" duration="1118000" />
       <workItem from="1568687181332" duration="295000" />
       <workItem from="1568745468888" duration="723000" />
-      <workItem from="1573158593752" duration="492000" />
+      <workItem from="1573158593752" duration="2145000" />
     </task>
     <servers />
   </component>

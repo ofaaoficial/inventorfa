@@ -37,12 +37,18 @@
                     </a>
                 </li>
                 @if(Auth()->user()->role == 'admin')
-                <li class="nav-item ">
-                    <a class="nav-link" href="{{route('users.index')}}">
-                        <i class="material-icons">person</i>
-                        <p>Users</p>
-                    </a>
-                </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{route('history.index')}}">
+                            <i class="material-icons">history</i>
+                            <p>History products</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{route('users.index')}}">
+                            <i class="material-icons">person</i>
+                            <p>Users</p>
+                        </a>
+                    </li>
                 @endif
             </ul>
         </div>

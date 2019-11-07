@@ -27,8 +27,11 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('users', 'UserController@index')->name('users.index');
 
+
+
     Route::middleware('isAdmin')->group(function(){
         Route::post('addProduct/{id}', 'ProductController@addProduct')->name('add');
+        Route::get('history', 'HistoryController@index')->name('history.index');
     });
 });
 

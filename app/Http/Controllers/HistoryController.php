@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\History;
 use Illuminate\Http\Request;
-
 class HistoryController extends Controller
 {
     /**
@@ -14,7 +13,8 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        //
+        $history = History::all()->sortByDesc('id');
+        return view('history.index', compact('history'));
     }
 
     /**
