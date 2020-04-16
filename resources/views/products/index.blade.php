@@ -21,7 +21,9 @@
                         <th>Name</th>
                         <th>Quantity</th>
                         <th>Description</th>
-                        <th>Options</th>
+                        @if(Auth()->user()->role == 'admin')
+                            <th>Options</th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -44,14 +46,16 @@
                                 @endif
                             </td>
                             <td>{{$product->description}}</td>
-                            <td>
-                            <a href="{{route('products.edit', $product->id)}}">
-                                    <button class="btn btn-small btn-outline-success">Editar</button>
-                                </a>
-                                <a href="{{route('history.show', $product->id)}}">
-                                    <button class="btn btn-small btn-outline-primary">Historial</button>
-                                </a>
-                            </td>
+                            @if(Auth()->user()->role == 'admin')
+                                <td>
+                                    <a href="{{route('products.edit', $product->id)}}">
+                                        <button class="btn btn-small btn-outline-success">Editar</button>
+                                    </a>
+                                    <a href="{{route('history.show', $product->id)}}">
+                                        <button class="btn btn-small btn-outline-primary">Historial</button>
+                                    </a>
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                     </tbody>

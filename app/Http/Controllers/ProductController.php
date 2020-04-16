@@ -33,7 +33,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -47,7 +47,6 @@ class ProductController extends Controller
             return back()->withErrors($v->errors());
         }
 
-
         Product::create($request->all());
 
         return redirect('products')->with('msg', 'Creado correctamente');
@@ -56,7 +55,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Product  $product
+     * @param \App\Product $product
      * @return \Illuminate\Http\Response
      */
     public function edit(Product $product)
@@ -67,8 +66,8 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Product  $product
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Product $product
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Product $product)
